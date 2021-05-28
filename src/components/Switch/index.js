@@ -71,24 +71,26 @@ const StyledSpan = styled('span', {
 })`
   display: flex;
   align-items: center;
-  justify-content: center;
   ${({ labeled, onLabel, offLabel, size }) => {
     const spanWidth = labelSize(onLabel, offLabel) - 2
     switch (labeled) {
       case 'left':
         return `
+        justify-content: end;
         margin-right: 10px;
         width: ${spanWidth}px;
         text-align: right;
         `
       case 'right':
         return `
-        margin-left: 10px;
-        width: ${spanWidth}px;
-        `
+          justify-content: start;
+          margin-left: 10px;
+          width: ${spanWidth}px;
+          `
       case 'inside':
       default:
         return `
+          justify-content: center;
           font-weight: 700;
           font-size: 16px;
           position: absolute;
